@@ -1,7 +1,5 @@
-import React, { useContext } from 'react'
-import { useLocation, Link, useNavigate } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import JobSkills from './JobSkills'
-import AuthContext from '../auth/AuthContext'
 import {
   Card,
   CardContent,
@@ -11,16 +9,7 @@ import {
   Divider
 } from '@mui/material'
 function JobCard ({ description, skills, id, title }) {
-  const auth = useContext(AuthContext)
-  const navigate = useNavigate()
   const location = useLocation()
-  const handleClick = () => {
-    if (auth.user) {
-      navigate(`/job/${id}`, { state: { backgroundLocation: location } })
-    } else {
-      navigate('/login', { state: { backgroundLocation: location } })
-    }
-  }
   return (
     <Card
       variant='outlined'
@@ -48,7 +37,6 @@ function JobCard ({ description, skills, id, title }) {
         <Button
           variant='contained'
           component={Link}
-          onClick={handleClick}
           to={`/job/${id}`}
           state={{ backgroundLocation: location }}
           sx={{ width: '130px', backgroundColor: 'green' }}

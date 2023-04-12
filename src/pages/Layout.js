@@ -1,4 +1,4 @@
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import Navigation from '../components/Navigation'
 import Stack from '@mui/material/Stack'
 function Layout () {

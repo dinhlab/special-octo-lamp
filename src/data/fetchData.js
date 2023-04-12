@@ -30,7 +30,7 @@ async function getJob (id) {
   // Wait for a 500ms delay
   await new Promise(resolve => setTimeout(resolve, 200))
   // Find and return the job that matches the provided id
-  return jobs.find(job => job.id == id)
+  return jobs.find(job => job.id === id)
 }
 // Export the two functions
 export default { getJobs, getJob }
